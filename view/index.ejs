@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food with nutrition</title>
+    <link rel="stylesheet" href="/s.css">
+</head>
+<body>
+    <h1>Order food by what is in it</h1>
+
+    <!-- Filter form: sends the values in the URL (GET) -->
+    <form method="get" action="/dishes">
+        <label>Max calories :</label>
+        <input type="number" name="maxCalories" value="<%= query.maxCalories || "" %>">
+        <label>Max carbs (g) :</label>
+        <input type="number" name="maxCarbs" value="<%= query.maxCarbs || "" %>">
+        <label>Min protein (g) :</label>
+        <input type="number" name="minProtein" value="<%= query.minProtein || "" %>">
+        <label>Type :</label>
+        <select name="type">
+            <option value="">All</option>
+            <option value="veg" <%= query.type === "veg" ? "selected" : "" %>>Veg</option>
+            <option value="non-veg" <%= query.type === "non-veg" ? "selected" : "" %>>Non-veg</option>
+        </select>
+        <button>Filter</button>
+        <a href="/dishes">Clear</a>
+    </form>
+    <br>
+
+    <% if (dishes.length === 0) { %>
+        <p>No dishes match these filters. Try a higher calorie limit or clear the filters.</p>
+    <% } %>
+
+    <% for (let dish of dishes) { %>
+        <div class="div">
+            <h1 class="user"><%= dish.name %></h1>
+            <p class="content"><%= dish.restaurant %> (<%= dish.type %>)</p>
+            <p class="content">
+                <b><%= dish.calories %></b> kcal |
+                <b><%= dish.carbs %>g</b> carbs |
+                <b><%= dish.protein %>g</b> protein |
+                <b><%= dish.fat %>g</b> fat
+            </p>
+            <p class="content">Rs. <%= dish.price %></p>
+        </div>
+        <a href="/dishes/<%= dish.id %>">See in detail</a>
+        <a href="/dishes/<%= dish.id %>/edit">edit</a>
+        <form method="post" action="/dishes/<%= dish.id %>?_method=DELETE">
+            <button>Delete</button>
+        </form>
+    <% } %>
+
+    <br><br>
+    <div>
+        <a href="/dishes/new">Add a new dish</a>
+    </div>
+</body>
+</html>

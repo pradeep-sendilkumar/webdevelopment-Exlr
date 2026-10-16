@@ -1,0 +1,74 @@
+/* h1 {
+    color: maroon;
+}
+ 
+.div {
+    background-color: blanchedalmond;
+}
+ 
+.user {
+    font-style: italic;
+} */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f7ee;
+    margin: 20px;
+}
+
+h1 {
+    color: maroon;
+}
+
+h2 {
+    color: gray;
+}
+
+.div {
+    background-color: blanchedalmond;
+    padding: 15px;
+    margin-top: 15px;
+    border: 2px solid maroon;
+    border-radius: 10px;
+}
+
+
+.user {
+    font-style: italic;
+}
+
+.content {
+    font-size: 18px;
+}
+
+b {
+    color: darkgreen;
+}
+
+
+a {
+    color: darkgreen;
+    margin-right: 10px;
+}
+
+
+input, select, textarea {
+    padding: 6px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+
+button {
+    background-color: darkgreen;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: maroon;
+}
+ 

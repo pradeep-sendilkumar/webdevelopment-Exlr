@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a dish</title>
+    <link rel="stylesheet" href="/s.css">
+</head>
+<body>
+    <h1>Add a dish</h1>
+
+    <form method="post" action="/dishes">
+        <label for="name">Dish name :</label>
+        <input id="name" name="name" required>
+        <br><br>
+        <label for="restaurant">Restaurant :</label>
+        <input id="restaurant" name="restaurant" required>
+        <br><br>
+        <label for="type">Type :</label>
+        <select id="type" name="type">
+            <option value="veg">Veg</option>
+            <option value="non-veg">Non-veg</option>
+        </select>
+        <br><br>
+        <label for="calories">Calories (kcal) :</label>
+        <input type="number" id="calories" name="calories" required>
+        <br><br>
+        <label for="carbs">Carbs (g) :</label>
+        <input type="number" id="carbs" name="carbs" required>
+        <br><br>
+        <label for="protein">Protein (g) :</label>
+        <input type="number" id="protein" name="protein" required>
+        <br><br>
+        <label for="fat">Fat (g) :</label>
+        <input type="number" id="fat" name="fat" required>
+        <br><br>
+        <label for="price">Price (Rs.) :</label>
+        <input type="number" id="price" name="price" required>
+        <br><br>
+        <button>Save dish</button>
+    </form>
+    <br>
+    <a href="/dishes">Cancel</a>
+</body>
+</html>
+

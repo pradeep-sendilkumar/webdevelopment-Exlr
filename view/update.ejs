@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <link rel="stylesheet" href="/s.css">
+</head>
+<body>
+    <h1>Update this dish :</h1>
+
+    <form method="POST" action="/dishes/<%= dish.id %>?_method=PATCH">
+        <label>Dish name :</label>
+        <input name="name" value="<%= dish.name %>" required>
+        <br><br>
+        <label>Restaurant :</label>
+        <input name="restaurant" value="<%= dish.restaurant %>" required>
+        <br><br>
+        <label>Type :</label>
+        <select name="type">
+            <option value="veg" <%= dish.type === "veg" ? "selected" : "" %>>Veg</option>
+            <option value="non-veg" <%= dish.type === "non-veg" ? "selected" : "" %>>Non-veg</option>
+        </select>
+        <br><br>
+        <label>Calories (kcal) :</label>
+        <input type="number" name="calories" value="<%= dish.calories %>" required>
+        <br><br>
+        <label>Carbs (g) :</label>
+        <input type="number" name="carbs" value="<%= dish.carbs %>" required>
+        <br><br>
+        <label>Protein (g) :</label>
+        <input type="number" name="protein" value="<%= dish.protein %>" required>
+        <br><br>
+        <label>Fat (g) :</label>
+        <input type="number" name="fat" value="<%= dish.fat %>" required>
+        <br><br>
+        <label>Price (Rs.) :</label>
+        <input type="number" name="price" value="<%= dish.price %>" required>
+        <br><br>
+        <button>Save changes</button>
+    </form>
+    <br>
+    <a href="/dishes/<%= dish.id %>">Cancel</a>
+</body>
+</html>

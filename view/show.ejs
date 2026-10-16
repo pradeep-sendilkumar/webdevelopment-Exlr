@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= dish.name %></title>
+    <link rel="stylesheet" href="/s.css">
+</head>
+<body>
+    <p>Details of the selected dish are shown below</p>
+    <div id="cc" class="div">
+        <h1><%= dish.name %></h1>
+        <h2><%= dish.restaurant %> (<%= dish.type %>)</h2>
+        <p>Calories : <b><%= dish.calories %> kcal</b></p>
+        <p>Carbohydrates : <b><%= dish.carbs %> g</b></p>
+        <p>Protein : <b><%= dish.protein %> g</b></p>
+        <p>Fat : <b><%= dish.fat %> g</b></p>
+        <p>Price : <b>Rs. <%= dish.price %></b></p>
+    </div>
+    <br>
+    <a href="/dishes/<%= dish.id %>/edit">Edit</a>
+    <a href="/dishes">Back to all dishes</a>
+</body>
+</html>
